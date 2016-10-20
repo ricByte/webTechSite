@@ -1,16 +1,15 @@
-Angular UI Router Biolerplate
+Angular UI Router Structure
 
 This is the basic structure to start work in angular.
 
 Run the following command in root directory of an app in command prompt.
 
-#### install bower dependencies
+#### Post-merge hooks:
 
-<pre>bower install</pre>
+<pre>bower install & npm install</pre>
 
-### Run this application
+### Run this application on localhost:8000
 
-<pre>python -m SimpleHTTPServer</pre>
+<pre>grunt</pre>
 
-Base on https://github.com/pandeysoni/Angular-UI-Router-Boilerplate.
-Issues https://www.npmjs.com/package/generator-angular-ui-router
+Based on https://github.com/pandeysoni/Angular-UI-Router-Boilerplate , https://www.npmjs.com/package/generator-angular-ui-router
