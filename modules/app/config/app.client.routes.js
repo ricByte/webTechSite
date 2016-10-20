@@ -10,7 +10,8 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',
 		$stateProvider.
 		state('app', {
 			url: '/',
-			templateUrl: 'modules/app/views/app.client.view.html'
+			templateUrl: 'modules/app/views/app.client.view.html',
+			controller: 'AppController'
 		});
 	}
 ]);

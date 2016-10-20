@@ -21,6 +21,10 @@ module.exports = function (grunt) {
             css: {
                 files: '**/*.scss',
                 tasks: ['sass']
+            },
+            js: {
+                files: 'modules/**/*.js',
+                tasks: ['js']
             }
         },
         concat: {
@@ -68,5 +72,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.registerTask('js', ['ngAnnotate','concat']);
     grunt.registerTask('default', ['clean', 'sass', 'ngAnnotate','concat', 'concurrent']);
 };
