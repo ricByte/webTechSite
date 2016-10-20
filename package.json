@@ -1,0 +1,31 @@
+{
+  "name": "web-tech-site",
+  "version": "1.0.0",
+  "description": "Front-end-webTech",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricByte/webTechSite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricByte/webTechSite/issues"
+  },
+  "homepage": "https://github.com/ricByte/webTechSite#readme",
+  "devDependencies": {
+    "bootstrap-sass": "3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ng-annotate": "^2.0.2",
+    "grunt-shell": "^2.0.0",
+    "sass": "^0.5.0"
+  }
+}
