@@ -1,8 +1,9 @@
 {
   "name": "web-tech-site",
   "version": "1.0.0",
-  "description": "Front-end-webTech",
+  "description": "Front-end del sito a quiz webTech",
   "main": "Gruntfile.js",
+   "keywords":["angular", "AngularJS", "Angular", "angularjs", "angularjs bsae structure", "angular generator"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
