@@ -6,8 +6,9 @@ angular.module('app.login')
 
 function loginRoutes($stateProvider, $urlRouterProvider, CONSTANT) {
     var loginBasePath = CONSTANT.basePathHtml + 'login/views/';
+    $urlRouterProvider.otherwise('login');
     $stateProvider.state('app.login', {
-        url: 'login',
+        url: '/login',
         views: {
             '': {
                 templateUrl: loginBasePath + 'login.client.view.html',
