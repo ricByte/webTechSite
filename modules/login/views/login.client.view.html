@@ -19,7 +19,7 @@
             <div class="form-actions">
                 <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Login</button>
                 <img ng-if="dataLoading" class="loading" />
-                <a href="#/register" class="btn btn-link">Register</a>
+                <a ui-sref="app.register" class="btn btn-link">Register</a>
             </div>
         </form>
     </div>
