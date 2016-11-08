@@ -19,7 +19,7 @@
             BaseHttpClientService.doPost('/login', data)
                 .then(function (data) {
                     var loginData = data.data.content;
-                    if (loginData.loginStatus) {
+                    if (loginData.loginStatus.loginStatus) {
                         deferred.resolve(loginData);
                     } else {
                         deferred.reject('Password or username incorrect');

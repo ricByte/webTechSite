@@ -9,6 +9,7 @@ angular.module('app')
 
 function appRoutes($stateProvider, $urlRouterProvider) {
     $stateProvider.state('app', {
+        url: '',
         views: {
             'header@app': {
                 templateUrl: 'modules/app/views/header.client.view.html',

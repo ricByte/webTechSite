@@ -6,7 +6,7 @@
     loginController.$inject = ['$scope', 'loginService', 'flashService', '$rootScope'];
     function loginController($scope, loginService, flashService, $rootScope) {
         $scope.dataLoading = false;
-        $scope.username = 'email';
+        $scope.username = 'reackonly';
         $scope.password = 'password';
         $scope.text = 'Login';
 
