@@ -4,3 +4,4 @@
 ApplicationConfiguration.registerModule('app');
 ApplicationConfiguration.registerModule('app.core');
 ApplicationConfiguration.registerModule('app.login');
+ApplicationConfiguration.registerModule('app.question');
