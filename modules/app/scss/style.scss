@@ -1,5 +1,6 @@
 
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "font/font";
 body {
   margin: 20px;
   height: 100%;
@@ -16,3 +17,4 @@ div{
 }
 
 @import "header/header";
+@import "../../question/scss/question-create";

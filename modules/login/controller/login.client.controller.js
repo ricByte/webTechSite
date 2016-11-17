@@ -3,8 +3,8 @@
     angular.module('app.login')
         .controller('loginController',loginController);
 
-    loginController.$inject = ['$scope', 'loginService', 'flashService', '$rootScope'];
-    function loginController($scope, loginService, flashService, $rootScope) {
+    loginController.$inject = ['$scope', 'loginService', 'flashService', '$rootScope', '$state', '$timeout'];
+    function loginController($scope, loginService, flashService, $rootScope, $state, $timeout) {
         $scope.dataLoading = false;
         $scope.username = 'reackonly';
         $scope.password = 'password';
@@ -17,6 +17,7 @@
                     $scope.dataLoading = false;
                     $scope.flash = flashService.generateSuccess('Logged in!');
                     $rootScope.userLogged = data;
+                    $state.go('app.question');
                 })
                 .catch(function (error) {
                     $scope.dataLoading = false;

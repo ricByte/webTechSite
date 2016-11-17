@@ -1,0 +1,27 @@
+.question-container {
+  .answer-container {
+    .checkbox {
+      label {
+        width: 80%;
+        vertical-align: middle;
+      }
+    }
+    .text-label {
+      text-transform: capitalize;
+      min-height: 1em;
+    }
+    .answer-text-container {
+      .answer-text {
+        width: 95%;
+        display: inline-block;
+      }
+      .fa-plus {
+        padding-left: 2%;
+        &:hover {
+          color: darkgray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

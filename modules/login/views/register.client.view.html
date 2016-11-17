@@ -24,7 +24,7 @@
             <span ng-show="form.cleverness.$dirty && form.cleverness.$error.required" class="help-block">cleverness is required</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.typeOfPlayer.$dirty && form.typeOfPlayer.$error.required }">
-            <label for="cleverness">Tipo di giocatore (select one):</label>
+            <label for="typeOfPlayer">Tipo di giocatore (select one):</label>
             <select class="form-control" id="typeOfPlayer" name="typeOfPlayer" ng-model="user.typeOfPlayer" required>
                 <option value="0">Editore</option>
                 <option value="1">Normale</option>
