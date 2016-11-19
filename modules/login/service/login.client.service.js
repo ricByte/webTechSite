@@ -70,7 +70,7 @@
             return [
                 userConstant.typeOfPlayer.Editore,
                 userConstant.typeOfPlayer.Base
-            ];
+            ][type];
 
         };
 
