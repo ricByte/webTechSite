@@ -21,7 +21,7 @@
                     $rootScope.userLogged = data;
 
                     if (loginService.getTypeOfPlayer(data.loginStatus.User.typeOfPlayer) === userConstant.typeOfPlayer.Editore) {
-                        $state.go('app.question');
+                        $state.go('app.question.create');
                     }
                 })
                 .catch(function (error) {
