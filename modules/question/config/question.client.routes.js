@@ -9,7 +9,15 @@ function questionRoutes($stateProvider, $urlRouterProvider, CONSTANT) {
     $urlRouterProvider.otherwise('login');
     $stateProvider
         .state('app.question', {
-            url: '/question/create',
+            url: '/question',
+            views: {
+                '': {
+                    templateUrl: questionBasePath + 'question-home.client.view.html'
+                }
+            }
+        })
+        .state('app.question.create', {
+            url:'/create',
             views: {
                 '': {
                     templateUrl: questionBasePath + 'question.client.view.html',

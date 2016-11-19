@@ -3,11 +3,17 @@
 
     angular
         .module('app.login')
+        .constant('userConstant', {
+            typeOfPlayer: {
+                Editore: 'editor',
+                Base: 'normal'
+            }
+        })
         .service('loginService', loginService);
 
-    loginService.$inject = ['BaseHttpClientService', '$q', '$timeout', '$state'];
+    loginService.$inject = ['BaseHttpClientService', '$q', '$timeout', '$state', 'userConstant'];
 
-    function loginService(BaseHttpClientService, $q, $timeout, $state) {
+    function loginService(BaseHttpClientService, $q, $timeout, $state, userConstant) {
 
         var loginAs = function (user, password) {
             var data = {
@@ -59,9 +65,19 @@
             return deferred.promise;
         };
 
+        var _getTypeOfPlayer = function(type){
+
+            return [
+                userConstant.typeOfPlayer.Editore,
+                userConstant.typeOfPlayer.Base
+            ][type];
+
+        };
+
         return {
             loginAs: loginAs,
-            registerUser: registerUser
+            registerUser: registerUser,
+            getTypeOfPlayer: _getTypeOfPlayer
         };
     }
 

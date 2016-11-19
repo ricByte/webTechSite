@@ -12,4 +12,6 @@ Run the following command in root directory of an app in command prompt.
 
 <pre>grunt</pre>
 
+For running open http://localhost:8000/#/login
+
 Based on https://github.com/pandeysoni/Angular-UI-Router-Boilerplate , https://www.npmjs.com/package/generator-angular-ui-router
