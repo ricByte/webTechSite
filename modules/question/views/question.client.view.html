@@ -16,7 +16,7 @@
                 <div class="row answer-container" ng-repeat="answer in formInput.answers track by $index">
                     <div class="col-xs-3 col-sm-2">
                         <div class="checkbox">
-                            <input type="radio" ng-model="$parent.formInput.solution" value="{{answer.num}}" id="answer.response{{$index}}" name="answer.response{{$index}}" required>
+                            <input type="radio" ng-model="$parent.formInput.solution" value="{{answer.num}}" id="answer.response{{$index}}" name="answer.response{{$index}}">
                             <label for="answer.response{{$index}}">Set as <b>Rigth answer</b></label>
                         </div>
                     </div>

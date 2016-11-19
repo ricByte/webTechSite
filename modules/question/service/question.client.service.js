@@ -21,13 +21,16 @@
         var sendQuestion = function (question, session) {
 
             var deferred = $q.defer(),
-                data = question;
+                data = {
+                    question: question,
+                    session: session
+                };
 
-            data.session = session;
+
 
             BaseHttpClientService.doPost('/question', data)
                 .then(function (data) {
-                    console.log(data);
+                    deferred.resolve(data);
                 })
                 .catch(function (error) {
                     deferred.reject('Can\'t connect with the server');

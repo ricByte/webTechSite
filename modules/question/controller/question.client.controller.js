@@ -3,8 +3,8 @@
     angular.module('app.login')
         .controller('questionController', questionController);
 
-    questionController.$inject = ['$scope', '$rootScope', 'questionService'];
-    function questionController($scope, $rootScope, questionService) {
+    questionController.$inject = ['$scope', '$rootScope', 'questionService', 'flashService', '$state', '$stateParams', '$timeout'];
+    function questionController($scope, $rootScope, questionService, flashService, $state, $stateParams, $timeout) {
         $scope.dataLoading = false;
         $scope.possibleType = questionService.getTypes();
         $scope.questionReponse = 0;
@@ -25,18 +25,28 @@
 
             $scope.dataLoading = true;
 
-            loginService.loginAs($scope.username, $scope.password)
+            questionService.sendQuestion($scope.formInput, $rootScope.userLogged.loginStatus.session)
                 .then(function (data) {
+
                     $scope.dataLoading = false;
-                    $scope.flash = flashService.generateSuccess('Logged in!');
-                    $rootScope.userLogged = data;
+                    $scope.flash = flashService.generateSuccess('Question saved succesfully');
+
+                    $timeout(function () {
+
+                        $state.transitionTo($state.current, $stateParams, {
+                            reload: true,
+                            inherit: false,
+                            notify: true
+                        });
+
+                    }, 3000);
+
                 })
                 .catch(function (error) {
                     $scope.dataLoading = false;
                     $scope.flash = flashService.generateError(error);
                 });
 
-            questionService.sendQuestion(quesion, session);
         };
 
         $scope.sq = sendQuestionFn;
