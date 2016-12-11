@@ -42,6 +42,31 @@
 
         /**
          * @function
+         * get question display to endpoint
+         *
+         * @param {Object} question
+         *
+         * @return {Object}
+         **/
+        var getQuestion = function (questionId) {
+
+            var deferred = $q.defer(),
+                data = questionId;
+
+            BaseHttpClientService.doGet('/question/display', data)
+                .then(function (data) {
+                    deferred.resolve(data.data.content.displayQuestion);
+                })
+                .catch(function (error) {
+                    deferred.reject('Can\'t connect with the server');
+                });
+
+            return deferred.promise;
+
+        };
+
+        /**
+         * @function
          * construct for question to send to endpoint
          *
          * @param {Array} answers
@@ -123,7 +148,8 @@
             createQuestionObject: createQuestionObject,
             createAnswerObject: createAnswerObject,
             getTypes: getTypes,
-            getDifficulty:_getDifficulty
+            getDifficulty:_getDifficulty,
+            getQuestion: getQuestion
         };
     }
 

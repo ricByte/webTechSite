@@ -57,6 +57,24 @@
             return initString;
         };
 
+        var _addPathParams = function (pathParams) {
+            var url = '';
+
+            if (!angular.isArray(pathParams))
+                pathParams = [pathParams];
+
+            if (pathParams && pathParams.length) {
+
+                angular.forEach(pathParams, function (param) {
+                   url += url.concat('/', param);
+                })
+
+            }
+
+            return url;
+
+        };
+
         var doPost = function (url, data) {
             url = baseUrl + url;
             $log.debug('POST: %s', url);
@@ -77,8 +95,8 @@
             return deferred.promise;
         };
 
-        var doGet = function (url, data) {
-            url = baseUrl + url;
+        var doGet = function (url, pathParams, data) {
+            url = baseUrl + url + _addPathParams(pathParams);
             $log.debug('GET: %s', url);
 
             var deferred = $q.defer(),
@@ -89,10 +107,10 @@
 
             $http.get(requestUrl, requestOptions)
                 .success(function (data, status, headers, config) {
-                    _successHandler(url, deferred, data, status, headers, config);
+                    _defaultSuccessHandler(url, deferred, data, status, headers, config);
                 })
                 .error(function (data, status, headers, config) {
-                    _errorHandler(url, deferred, data, status, headers, config);
+                    _defaultErrorHandler(url, deferred, data, status, headers, config);
                 });
             return deferred.promise;
         };
