@@ -16,6 +16,15 @@ function questionRoutes($stateProvider, $urlRouterProvider, CONSTANT) {
                 }
             }
         })
+        .state('app.question.list', {
+            url:'/list',
+            views: {
+                '': {
+                    controller: 'homeQuestionController',
+                    templateUrl: questionBasePath + 'home.question.client.view.html'
+                }
+            }
+        })
         .state('app.question.create', {
             url:'/create',
             views: {
